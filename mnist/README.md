@@ -18,3 +18,7 @@ $ git clone https://github.com/ChrisParsonsDev/tensorflow_demos.git
 $ cd tensorflow_demos/mnist
 $ python mnist.py
 ```
+
+## ToDo
+
+1. Send output from visualisations to a file for easier remote usage in a PowerAI environment.
