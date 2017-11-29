@@ -40,8 +40,10 @@ def split_data(num, Mode="train"):
 # init Classifier
 
 
+# Use split_data to separate training images
 # Specify number of train samples to load Mode="train"
 
+# Use split_data to separate test images
 # Specify number of test samples to load Mode="test"
 
 
