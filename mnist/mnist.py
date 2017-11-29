@@ -30,10 +30,6 @@ def split_data(num, Mode="train"):
 
     return "Error: please specify train/test mode"
 
-# Specify number of train samples to load Mode="train"
-X_train, y_train = split_data(train_size, Mode="train")
-
-
 # Create TF Session
 sess = tf.Session()
 
