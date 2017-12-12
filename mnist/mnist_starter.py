@@ -55,13 +55,16 @@ def split_data(num, Mode="train"):
 
 
 # Determine loss of model
-
+# cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
 
 # Define Graident Descent classifier
+# clf = tf.train.GradientDescentOptimizer(learning_rate).minimize(cross_entropy)
 
 # See if classification matches the label for that image
+# correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
 
 # Accuracy of the model = average number of times prediction is correct
+# accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 # For every training iteration
 for iteration in range(training_iter+1):

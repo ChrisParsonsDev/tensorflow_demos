@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import random as rand
 import tensorflow as tf
+from datetime import datetime
 
 # Import MNIST dataset
 from tensorflow.examples.tutorials.mnist import input_data
@@ -29,6 +30,9 @@ def split_data(num, Mode="train"):
         return X_train, y_train
 
     return "Error: please specify train/test mode"
+
+# Measure total runtime for TF.
+executionStart = datetime.now()
 
 # Create TF Session
 sess = tf.Session()
@@ -75,6 +79,11 @@ for iteration in range(training_iter+1):
     # Every 50 runs, determine accuracy by feeding model the test data
     if iteration % 50 == 0:
         print("Training Step: "+ str(iteration) + "  Accuracy =  " + str(sess.run(accuracy, feed_dict={X_: X_test, y_: y_test})) + "  Loss = " + str(sess.run(cross_entropy, {X_: X_train, y_: y_train})))
+
+
+# Stop measuring and report runtime
+executionEnd = datetime.now() - executionStart
+print("Total Training Time: "+str(executionEnd.total_seconds())+"s")
 
 # After the training has completed, visualise heat map of the weights
 for digit in range(10):
